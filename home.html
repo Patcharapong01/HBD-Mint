@@ -66,7 +66,6 @@
       transition: transform 0.2s, background-color 0.3s;
       box-shadow: 0 4px 10px rgba(255, 128, 170, 0.4);
       z-index: 1;
-      margin: 8px;
     }
     button:hover {
       background-color: #ff99c2;
@@ -103,9 +102,6 @@
       opacity: 0;
       animation: showMsg 0.8s ease forwards;
       z-index: 100;
-      width: 90%;
-      max-width: 400px;
-      box-sizing: border-box;
     }
     @keyframes showMsg {
       0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0; }
@@ -129,14 +125,6 @@
     }
 
     audio { display: none; }
-
-    /* Responsive สำหรับมือถือ */
-    @media screen and (max-width: 480px) {
-      .bg-text { font-size: 1.2rem; }
-      button { font-size: 1rem; padding: 12px 20px; }
-      .cake { width: 60px; }
-      .message-box { font-size: 1rem; padding: 20px 15px; }
-    }
   </style>
 </head>
 <body>
@@ -171,6 +159,7 @@
       playing = !playing;
     });
 
+    // 🎁 ปุ่มรับของขวัญ
     button.addEventListener("click", () => {
       if (!playing) {
         music.play();
@@ -192,7 +181,7 @@
       const message = document.createElement("div");
       message.classList.add("message-box");
       message.innerHTML = `
-        💖 สุขสันต์วันเกิดนะคับคุณสุภิณญา บุญปก 💖<br><br>
+        💖 สุขสันต์วันเกิดนะคะคุณสุภิณญา 💖<br><br>
         ขอให้ปีนี้เต็มไปด้วยความสุข ความสมหวังในทุกสิ่งที่ตั้งใจ 💫<br>
         สุขภาพแข็งแรง การงานรุ่งเรือง มีแต่สิ่งดี ๆ เข้ามาไม่ขาดสาย 🌸<br><br>
         และขอให้หัวใจของคุณเจอแต่ความอบอุ่นและคนที่รักจริง ๆ นะ 💕<br><br>
@@ -201,6 +190,7 @@
       `;
       document.body.appendChild(message);
 
+      // ปุ่มปิด popup
       message.querySelector(".close-btn").addEventListener("click", () => {
         message.remove();
       });
