@@ -1,199 +1,67 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🎂 สุขสันต์วันเกิดคุณสุภิณญา 💖</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&display=swap');
-
-    body {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      background: linear-gradient(120deg, #ffe6f2, #ffcce0, #fff0f5, #ffe6f2);
-      background-size: 300% 300%;
-      animation: bgMove 10s ease infinite;
-      font-family: 'Prompt', sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      overflow: hidden;
-    }
-
-    @keyframes bgMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    h1 {
-      color: #ff4d88;
-      font-size: 2.2rem;
-      margin-bottom: 10px;
-    }
-
-    p {
-      color: #ff6699;
-      font-size: 1.1rem;
-      margin: 0 20px 20px;
-      line-height: 1.8;
-    }
-
-    .cake-container {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 10px;
-    }
-
-    .cake {
-      width: 250px;
-      animation: bounce 2s ease-in-out infinite;
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
-    .candles {
-      position: absolute;
-      top: 10%;
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-    }
-
-    .candle {
-      width: 8px;
-      height: 30px;
-      background-color: #ff99c2;
-      border-radius: 5px;
-      position: relative;
-    }
-
-    .flame {
-      width: 10px;
-      height: 10px;
-      background-color: gold;
-      border-radius: 50%;
-      position: absolute;
-      top: -12px;
-      left: -1px;
-      animation: flicker 0.3s infinite;
-    }
-
-    @keyframes flicker {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.2); opacity: 0.8; }
-    }
-
-    button {
-      background-color: #ff80aa;
-      color: white;
-      border: none;
-      padding: 15px 25px;
-      border-radius: 30px;
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: transform 0.2s, background-color 0.3s;
-      box-shadow: 0 4px 10px rgba(255, 128, 170, 0.4);
-      margin-top: 20px;
-    }
-    button:hover {
-      background-color: #ff99c2;
-      transform: scale(1.05);
-    }
-
-    .message-box {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(0.5);
-      background: white;
-      padding: 30px 40px;
-      border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(255, 128, 170, 0.6);
-      text-align: center;
-      color: #ff4d88;
-      font-size: 1.2rem;
-      line-height: 1.8;
-      opacity: 0;
-      animation: showMsg 0.8s ease forwards;
-      z-index: 100;
-    }
-
-    @keyframes showMsg {
-      0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0; }
-      100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
-    }
-
-    .close-btn {
-      margin-top: 15px;
-      background-color: #ffb3cc;
-      padding: 10px 20px;
-      border-radius: 20px;
-      border: none;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    .close-btn:hover {
-      background-color: #ff80aa;
-      transform: scale(1.1);
-    }
-
-    audio { display: none; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Suphinya 💖</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Prompt', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(to bottom right, #ffe6f2, #fff0f5);
+  }
+  #login {
+    text-align: center;
+  }
+  input {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+  }
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff80aa;
+    color: white;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #ff99c2;
+  }
+</style>
 </head>
 <body>
 
-  <h1>🎂 สุขสันต์วันเกิดนะคุณสุภิณญา บุญปก 💖</h1>
-  <p>
-    ขอให้ทุกวันของคุณเต็มไปด้วยรอยยิ้ม ความสุข และความรักที่อบอุ่นที่สุดเลยนะ 💐<br>
-    ขอให้สุขภาพแข็งแรง การงานก้าวหน้า และหัวใจมีแต่สิ่งสวยงามเสมอ 💞<br>
-    <i>จีบอยู่นะ ใจอ่อนด้วยน้า~ 😳💗</i>
-  </p>
+<div id="login">
+  <h2>กรุณาใส่รหัสผ่านวันเกิด 🎂 <br><h3>วัน เดือน ปี ค.ศ.</h3></h2>
+  <input type="password" id="password" placeholder="DDMMYYYY">
+  <br>
+  <button onclick="checkPassword()">รับคำอวยพร 🌹</button>
+</div>
 
-  <div class="cake-container">
-    <img src="" alt="Cake" class="cake">
-    <div class="candles">
-      <div class="candle"><div class="flame"></div></div>
-      <div class="candle"><div class="flame"></div></div>
-      <div class="candle"><div class="flame"></div></div>
-    </div>
-  </div>
+<script>
+  function checkPassword() {
+    const pass = document.getElementById('password').value;
+    const correctPass = '03112003'; // สำหรับเปลี่ยนเป็นวันเกิดจริง (DDMMYYYY)
+    
+    if(pass === correctPass) {
+      // รหัสถูกต้อง → ไปหน้าเว็บ HBD
+      window.location.href = 'home.html'; // ใส่ชื่อไฟล์เว็บที่จะให้ลิงค์ไปหา
+    } else {
+      alert('รหัสผิด! กรุณาลองใหม่ 🎀');
+    }
+  }
+</script>
 
-  <button id="giftButton">🎁 เปิดของขวัญ</button>
-  <audio id="music" src="k-nhinlaem-128-ytshorts.savetube.me.mp3"></audio>
-
-  <script>
-    const button = document.getElementById("giftButton");
-    const music = document.getElementById("music");
-
-    button.addEventListener("click", () => {
-      music.play();
-
-      const message = document.createElement("div");
-      message.classList.add("message-box");
-      message.innerHTML = `
-        💖 สุขสันต์วันเกิดอีกครั้งนะคุณสุภิณญา 💖<br><br>
-        ขอให้ปีนี้มีแต่เรื่องราวดี ๆ เข้ามา<br>
-        เจอแต่คนดี ๆ และความสุขที่แท้จริง 🌈<br><br>
-        <i>จากคนที่แอบยิ้มให้ทุกครั้งที่เห็นคุณ 😍</i><br><br>
-        <button class="close-btn">ปิด 💌</button>
-      `;
-      document.body.appendChild(message);
-
-      message.querySelector(".close-btn").addEventListener("click", () => {
-        message.remove();
-      });
-    });
-  </script>
 </body>
 </html>
