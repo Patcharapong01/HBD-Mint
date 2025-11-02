@@ -7,7 +7,6 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&display=swap');
 
-    /* ===== Body & Background ===== */
     body {
       margin: 0;
       padding: 0;
@@ -30,7 +29,6 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* ===== Floating Background Text ===== */
     .bg-text {
       position: absolute;
       top: 0;
@@ -41,13 +39,13 @@
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      font-size: 1.5rem;
+      font-size: 2rem;
       color: rgba(255, 105, 180, 0.12);
       z-index: -1;
       overflow: hidden;
     }
     .bg-text span {
-      margin: 10px;
+      margin: 15px;
       user-select: none;
       animation: float 10s ease-in-out infinite;
     }
@@ -57,14 +55,13 @@
       100% { transform: translateY(0px); opacity: 0.8; }
     }
 
-    /* ===== Buttons ===== */
     button {
       background-color: #ff80aa;
       color: white;
       border: none;
-      padding: 12px 20px;
-      border-radius: 25px;
-      font-size: 1rem;
+      padding: 15px 25px;
+      border-radius: 30px;
+      font-size: 1.1rem;
       cursor: pointer;
       transition: transform 0.2s, background-color 0.3s;
       box-shadow: 0 4px 10px rgba(255, 128, 170, 0.4);
@@ -76,11 +73,10 @@
       transform: scale(1.05);
     }
 
-    /* ===== Floating Cake Animation ===== */
     .cake {
       position: fixed;
       bottom: -100px;
-      width: 60px;
+      width: 80px;
       height: auto;
       animation: floatUp 4s linear forwards;
       pointer-events: none;
@@ -91,25 +87,25 @@
       100% { transform: translateY(-120vh) scale(1.8); opacity: 0; }
     }
 
-    /* ===== Message Box ===== */
     .message-box {
       position: fixed;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%) scale(0.8);
-      width: 85%;
-      max-width: 400px;
+      transform: translate(-50%, -50%) scale(0.5);
       background: white;
-      padding: 25px 20px;
+      padding: 30px 40px;
       border-radius: 20px;
       box-shadow: 0 4px 20px rgba(255, 128, 170, 0.6);
       text-align: center;
       color: #ff4d88;
-      font-size: 1rem;
-      line-height: 1.6;
+      font-size: 1.2rem;
+      line-height: 1.8;
       opacity: 0;
       animation: showMsg 0.8s ease forwards;
       z-index: 100;
+      width: 90%;
+      max-width: 400px;
+      box-sizing: border-box;
     }
     @keyframes showMsg {
       0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0; }
@@ -134,12 +130,12 @@
 
     audio { display: none; }
 
-    /* ===== Responsive for Larger Screens ===== */
-    @media screen and (min-width: 768px) {
-      .bg-text { font-size: 2rem; }
-      button { font-size: 1.1rem; padding: 15px 25px; }
-      .cake { width: 80px; }
-      .message-box { width: 400px; font-size: 1.2rem; padding: 30px 40px; }
+    /* Responsive สำหรับมือถือ */
+    @media screen and (max-width: 480px) {
+      .bg-text { font-size: 1.2rem; }
+      button { font-size: 1rem; padding: 12px 20px; }
+      .cake { width: 60px; }
+      .message-box { font-size: 1rem; padding: 20px 15px; }
     }
   </style>
 </head>
@@ -157,14 +153,12 @@
     const toggle = document.getElementById("musicToggle");
     const bg = document.getElementById("bgText");
 
-    // สร้างข้อความลอยพื้นหลัง
     for (let i = 0; i < 80; i++) {
       const span = document.createElement("span");
       span.textContent = "จีบอยู่นะ";
       bg.appendChild(span);
     }
 
-    // ปุ่มเล่น/หยุดเพลง
     let playing = false;
     toggle.addEventListener("click", () => {
       if (playing) {
@@ -177,7 +171,6 @@
       playing = !playing;
     });
 
-    // 🎁 ปุ่มรับของขวัญ
     button.addEventListener("click", () => {
       if (!playing) {
         music.play();
@@ -185,7 +178,6 @@
         playing = true;
       }
 
-      // เค้กลอย
       const cakeInterval = setInterval(() => {
         const cake = document.createElement("img");
         cake.src = "708322B0-8443-46ED-A878-CFCF2ACC1541-removebg-preview.png";
@@ -197,7 +189,6 @@
       }, 250);
       setTimeout(() => clearInterval(cakeInterval), 5000);
 
-      // กล่องข้อความ
       const message = document.createElement("div");
       message.classList.add("message-box");
       message.innerHTML = `
@@ -210,7 +201,6 @@
       `;
       document.body.appendChild(message);
 
-      // ปุ่มปิด popup
       message.querySelector(".close-btn").addEventListener("click", () => {
         message.remove();
       });
